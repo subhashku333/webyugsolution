@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans-Variable.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Blue & White Theme */
+    --background: 0.99 0 0;
+    --foreground: 0.15 0.02 264;
+    --card: 0.99 0 0;
+    --card-foreground: 0.15 0.02 264;
+    --popover: 0.99 0 0;
+    --popover-foreground: 0.15 0.02 264;
+    --primary: 0.52 0.22 264;
+    --primary-foreground: 0.99 0 0;
+    --secondary: 0.95 0.02 264;
+    --secondary-foreground: 0.3 0.08 264;
+    --muted: 0.96 0.01 264;
+    --muted-foreground: 0.55 0.05 264;
+    --accent: 0.92 0.04 264;
+    --accent-foreground: 0.3 0.1 264;
+    --destructive: 0.55 0.22 27;
+    --destructive-foreground: 0.99 0 0;
+    --border: 0.9 0.02 264;
+    --input: 0.9 0.02 264;
+    --ring: 0.52 0.22 264;
+    --radius: 0.5rem;
+    --chart-1: 0.52 0.22 264;
+    --chart-2: 0.65 0.18 220;
+    --chart-3: 0.7 0.15 190;
+    --chart-4: 0.75 0.1 250;
+    --chart-5: 0.45 0.2 270;
+    --sidebar: 0.97 0.01 264;
+    --sidebar-foreground: 0.15 0.02 264;
+    --sidebar-primary: 0.52 0.22 264;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.93 0.03 264;
+    --sidebar-accent-foreground: 0.3 0.08 264;
+    --sidebar-border: 0.9 0.02 264;
+    --sidebar-ring: 0.52 0.22 264;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: linear-gradient(
+      135deg,
+      oklch(0.2 0.12 264) 0%,
+      oklch(0.3 0.18 264) 40%,
+      oklch(0.4 0.22 264) 100%
+    );
+  }
+  .gradient-hero-overlay {
+    background: linear-gradient(
+      135deg,
+      oklch(0.12 0.14 264 / 0.92) 0%,
+      oklch(0.22 0.2 264 / 0.85) 100%
+    );
+  }
+  .gradient-card {
+    background: linear-gradient(
+      135deg,
+      oklch(0.52 0.22 264) 0%,
+      oklch(0.42 0.22 240) 100%
+    );
+  }
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.7 0.18 220),
+      oklch(0.55 0.22 264)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+}
